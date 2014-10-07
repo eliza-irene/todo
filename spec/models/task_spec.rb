@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe Task do 
-  before { @task = Task.new(title: "Walk the dog", completed: true) }
+  before { @task = Task.new(title: "Walk the dog", completed: true, location: "the park") }
     
   subject { @task }
 
+  it { should respond_to(:location)}
   it { should respond_to(:completed) }
   it { should respond_to(:title) }
   it { should be_valid }
@@ -35,6 +36,15 @@ describe Task do
     end
 
     describe "location" do
-      it 
+      describe "not present" do
+        before { @task.location = " " }
+        it { should be_valid }
+      end
+
+      describe "too long" do
+        before { @task.location = "a" * 255 }
+        it { should_not be_valid}
+      end
+    end
   end
 end

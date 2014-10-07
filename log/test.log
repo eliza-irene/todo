@@ -889,3 +889,183 @@ Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
 Started GET "/help" for 127.0.0.1 at 2014-10-07 12:31:38 -0400
 Processing by StaticPagesController#help as HTML
 Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDueAtToTasks (20141007173604)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "tasks" ADD COLUMN "due_at" timestamp[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141007173604"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTasks (20141006194339)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "tasks" ("id" serial primary key, "title" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141006194339"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddCompletedToTasks (20141007141058)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.2ms)[0m  [1mALTER TABLE "tasks" ADD COLUMN "completed" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141007141058"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to AddLocationToTasks (20141007155408)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "tasks" ADD COLUMN "location" character varying(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141007155408"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddDueAtToTasks (20141007173604)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (15.1ms)[0m  [1mALTER TABLE "tasks" ADD COLUMN "due_at" timestamp DEFAULT '2014-10-07'[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141007173604"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-07 13:49:15 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 16ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-07 13:49:15 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-07 13:49:15 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-07 13:49:15 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-07 13:49:15 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-07 13:49:15 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTasks (20141006194339)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "tasks" ("id" serial primary key, "title" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141006194339"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddCompletedToTasks (20141007141058)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.9ms)[0m  [1mALTER TABLE "tasks" ADD COLUMN "completed" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141007141058"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to AddLocationToTasks (20141007155408)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "tasks" ADD COLUMN "location" character varying(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141007155408"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddDueAtToTasks (20141007173604)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mALTER TABLE "tasks" ADD COLUMN "due_at" date DEFAULT '2014-10-07'[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141007173604"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-07 13:57:23 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 13ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-07 13:57:23 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-07 13:57:23 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-07 13:57:23 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-07 13:57:23 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-07 13:57:23 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-07 13:58:26 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 13ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-07 13:58:26 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-07 13:58:26 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-07 13:58:26 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-07 13:58:26 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-07 13:58:26 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-07 14:00:59 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 14ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-07 14:00:59 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-07 14:00:59 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-07 14:00:59 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-07 14:00:59 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-07 14:00:59 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-07 14:08:18 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 13ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-07 14:08:18 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-07 14:08:18 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-07 14:08:18 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-07 14:08:18 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-07 14:08:18 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)

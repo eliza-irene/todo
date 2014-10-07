@@ -46,5 +46,14 @@ describe Task do
         it { should_not be_valid}
       end
     end
+
+    describe "due_at" do
+      it "todays date by default" do
+        new_task = Task.new(title: "Walk the dog")
+        expect(new_task.due_at).to eq(Date.today)
+      end
+    end
+
+
   end
 end

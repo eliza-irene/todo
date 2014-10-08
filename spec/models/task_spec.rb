@@ -49,9 +49,11 @@ describe Task do
 
     describe "due_at" do
       it "todays date by default" do
-        new_task = Task.new(title: "Walk the dog")
+        new_task = Task.new(title: "Walk the dog") 
         expect(new_task.due_at).to eq(Date.today)
       end
+
+      #location regex - users need to enter a full address if they want to be able to link to
     end
 
 

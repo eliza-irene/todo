@@ -1635,3 +1635,192 @@ Processing by TasksController#show as HTML
   Parameters: {"id"=>"14"}
   [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 14]]
 Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tasks" ("created_at", "due_at", "location", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-10-09 02:18:35.008156"], ["due_at", "2014-10-10"], ["location", "Piedmont Park"], ["title", "Walk Milo"], ["updated_at", "2014-10-09 02:18:35.008156"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 15]]
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "due_at", "location", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-10-09 02:18:35.025489"], ["due_at", "2014-10-10"], ["location", "Piedmont Park"], ["title", "Walk Milo"], ["updated_at", "2014-10-09 02:18:35.025489"]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 16]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-08 22:18:35 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 20ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-08 22:18:35 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-08 22:18:35 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-08 22:18:35 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-08 22:18:35 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-08 22:18:35 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-10-09 02:18:35.096793"], ["title", "Do the dishes"], ["updated_at", "2014-10-09 02:18:35.096793"]]
+  [1m[36m (5.1ms)[0m  [1mCOMMIT[0m
+Started GET "/tasks/17" for 127.0.0.1 at 2014-10-08 22:18:35 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mTask Load (0.4ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 17]]
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-10-09 02:18:35.110504"], ["title", "Do the dishes"], ["updated_at", "2014-10-09 02:18:35.110504"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Started GET "/tasks/18" for 127.0.0.1 at 2014-10-08 22:18:35 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 18]]
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-10-09 02:18:35.117861"], ["title", "Do the dishes"], ["updated_at", "2014-10-09 02:18:35.117861"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Started GET "/tasks/19" for 127.0.0.1 at 2014-10-08 22:18:35 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 19]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("created_at", "due_at", "location", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-10-09 02:34:56.442665"], ["due_at", "2014-10-10"], ["location", "Piedmont Park"], ["title", "Walk Milo"], ["updated_at", "2014-10-09 02:34:56.442665"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 20]]
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "due_at", "location", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-10-09 02:34:56.454376"], ["due_at", "2014-10-10"], ["location", "Piedmont Park"], ["title", "Walk Milo"], ["updated_at", "2014-10-09 02:34:56.454376"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 21]]
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-08 22:34:56 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-08 22:34:56 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-08 22:34:56 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-08 22:34:56 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-08 22:34:56 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-08 22:34:56 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-10-09 02:34:56.512674"], ["title", "Do the dishes"], ["updated_at", "2014-10-09 02:34:56.512674"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Started GET "/tasks/22" for 127.0.0.1 at 2014-10-08 22:34:56 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 22]]
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-10-09 02:34:56.519287"], ["title", "Do the dishes"], ["updated_at", "2014-10-09 02:34:56.519287"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Started GET "/tasks/23" for 127.0.0.1 at 2014-10-08 22:34:56 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 23]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-10-09 02:34:56.525208"], ["title", "Do the dishes"], ["updated_at", "2014-10-09 02:34:56.525208"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Started GET "/tasks/24" for 127.0.0.1 at 2014-10-08 22:34:56 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 24]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 35ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("created_at", "due_at", "location", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-10-09 03:12:18.762471"], ["due_at", "2014-10-10"], ["location", "Piedmont Park"], ["title", "Walk Milo"], ["updated_at", "2014-10-09 03:12:18.762471"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 25]]
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "due_at", "location", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-10-09 03:12:18.780272"], ["due_at", "2014-10-10"], ["location", "Piedmont Park"], ["title", "Walk Milo"], ["updated_at", "2014-10-09 03:12:18.780272"]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 26]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-08 23:12:18 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 15ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2014-10-08 23:12:18 -0400
+Processing by StaticPagesController#home as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-08 23:12:18 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+Started GET "/about" for 127.0.0.1 at 2014-10-08 23:12:18 -0400
+Processing by StaticPagesController#about as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-08 23:12:18 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Started GET "/help" for 127.0.0.1 at 2014-10-08 23:12:18 -0400
+Processing by StaticPagesController#help as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-10-09 03:12:18.844266"], ["title", "Do the dishes"], ["updated_at", "2014-10-09 03:12:18.844266"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Started GET "/tasks/27" for 127.0.0.1 at 2014-10-08 23:12:18 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 27]]
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-10-09 03:12:18.850824"], ["title", "Do the dishes"], ["updated_at", "2014-10-09 03:12:18.850824"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Started GET "/tasks/28" for 127.0.0.1 at 2014-10-08 23:12:18 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 28]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-10-09 03:12:18.856470"], ["title", "Do the dishes"], ["updated_at", "2014-10-09 03:12:18.856470"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Started GET "/tasks/29" for 127.0.0.1 at 2014-10-08 23:12:18 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = $1 LIMIT 1  [["id", 29]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)

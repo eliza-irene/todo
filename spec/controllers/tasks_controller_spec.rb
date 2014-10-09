@@ -13,10 +13,64 @@ describe TasksController, type: :controller do
 
     it "assigns requested task to @task" do
       get :show, id: @task.id
-      #expect @task to be set to the task we're looking for
       assigns(:task).should eq(@task)
-      #When we go to /tasks/3
-      #Right side of equal sign --> Task.find(3) --> { id: 3, title: "Walk the dog", created_at: }
+    end
+  end
+
+  describe "GET index" do   
+    it "populates an array of tasks"
+    it "renders index page"
+  end
+
+  describe "GET new" do
+    it "assigns new task to @task" 
+    it "renders new task page" 
+  end 
+
+  describe "GET edit" do
+    it "edits task assigned to @task"
+    it "renders edit page"
+  end
+
+  describe 'PUT update' do 
+    context "valid attributes" do 
+      it "locates requested @task"  
+      it "changes @task's attributes" 
+      it "redirects to the updated task" 
+    end
+
+    context "invalid attributes" do
+      it "locates requested @task"
+      it "does not change @task's attributes"
+      it "re-renders edit page"
+    end
+  end
+
+  describe "POST create" do 
+    context "with valid attributes" do 
+      it "creates new task" 
+      it "redirects to new task"
+    end
+
+    context "with invalid attributes" do 
+      it "doesn't create new task" 
+      it "re-renders new page"
+    end
+  end
+
+  describe 'DELETE destroy' do
+    context "delete one task" do
+      it "deletes the task"
+      it "re-directs to index page"
+    end
+
+    context "delete the entire task list" do
+      it "deletes the entire list of tasks"
+      it "re-directs to index page"
     end
   end
 end
+
+
+
+

@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   match '/help', to: 'static_pages#help', via: 'get'
 
 #use get for dynamic pages (get doesn't pick up the name of the route, so you have to name it using as: :name)
-  get 'tasks/:id', to: 'tasks#show', as: :show_task
+  # get 'tasks/:id', to: 'tasks#show', as: :show_task
+  # get 'tasks/new', to: 'tasks#new'
+ 
+  resources :tasks, only: [:show, :new, :create]
 
 
 

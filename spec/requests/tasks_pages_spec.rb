@@ -10,14 +10,14 @@ describe "tasks_pages" do
     it { should have_title("Todo | Show Task") }
 
     it { should have_selector('h1', "I need to...") }
-    it { should have_selector('p', my_task.title)}
+    it { should have_selector('p', text: my_task.title)}
   end
 
   describe "new page GET /tasks/new" do
     before { visit new_task_path }
   
     it { should have_title("Todo | New Task") }
-    it { should have_selector('h1', "New Task") }
+    it { should have_selector('h1', text: "New Task") }
 
     describe "create POST /tasks" do
       let(:submit) { "Save" }
@@ -39,7 +39,7 @@ describe "tasks_pages" do
 
           #redirect to :show
           it { should have_title("Todo | Show Task")}
-          it { should have_selector('p', "Walk the dog")}
+          it { should have_selector('p', text: "Walk the dog")}
         end
       end
 
@@ -52,8 +52,61 @@ describe "tasks_pages" do
           before { click_button submit}
 
           it {should have_title('Todo | New Task')}
-          it {should have_content('error')}
+          # it {should have_content('error')}
         end
+      end
+    end
+  end
+
+  describe "index page GET /tasks" do
+    before { visit tasks_path }
+    let(:task) { Task.create(title: "Walk the dog") }
+
+    it {should have_title( 'Todo | My Tasks')}
+    it { should have_selector('h1', text: "All Tasks" )}
+
+    describe "destroy DELETE /tasks/:id" do
+    
+      it { should have_link('Delete', href: task_path(Task.first)) }
+
+      it "destroys the task" do
+        expect {
+          click_link('Delete', match: :first)
+        }.to change(Task, :count).by(-1)
+      end
+    end
+  end
+
+  describe "edit page GET /tasks/:id/edit" do
+    let(:task) { Task.create(title: "Walk the dog") }
+
+    before { visit edit_task_path(task.id) }
+
+    it { should have_title( 'Todo | Edit Task')}
+    it { should have_selector('h1', 'Edit Task')}
+
+    describe "update PUT /tasks/:id" do
+      let (:submit) { "Save" }
+
+      context "valid information" do
+        before do
+          fill_in "Title", with: "Walk the dog"
+          click_button submit
+        end
+
+        it { should have_title( 'Todo | Show Task')}
+        it { should have_selector('p'), text: "Walk the dog"}
+        specify { expect(task.reload.title).to eq("Walk the dog") }
+      end
+
+      context "invalid information" do
+        before do 
+          fill_in "Title", with: " "
+          click_button submit
+        end
+
+        it {should have_title('Todo | Edit Task') }
+        # it { should have_content('error') }
       end
     end
   end

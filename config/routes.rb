@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # get 'tasks/:id', to: 'tasks#show', as: :show_task
   # get 'tasks/new', to: 'tasks#new'
  
-  resources :tasks, only: [:show, :new, :create]
+  resources :tasks, only: [:show, :new, :create, :index, :edit, :update, :destroy]
 
 
 

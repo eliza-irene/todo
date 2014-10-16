@@ -61,38 +61,80 @@ describe "POST create" do
 end
 
   describe "GET edit" do
-    it "edits task assigned to @task"
-    it "renders edit page"
+    let(:task) { Task.create(title: "Walk the dog") }
+
+    it "renders :edit" do
+    get :edit, id: task.id 
+    expect(response).to render_template(:edit)
+    end
+
+    it "assigns requested task to @task" do
+      get :edit, id: task.id
+      assigns(:task).should eq(task)
+    end
   end
 
   describe 'PUT update' do 
-    context "valid attributes" do 
-      it "locates requested @task"  
-      it "changes @task's attributes" 
-      it "re-directs to :show" 
+    let(:task) { Task.create(title: "Do the dishes") }
+
+    context "valid attributes" do
+
+      it "changes @task's attributes" do
+        put :update, id: task.id, task: { title: "Walk the dog" }
+        task.reload
+        expect(task.title).to eq("Walk the dog")
+      end
+
+      it "re-directs to :show" do
+        post :update, id: task.id, task: { title: "Walk the dog" }
+        last_task = Task.last
+        expect(response).to redirect_to(task_path(last_task.id))
+      end
     end
 
     context "invalid attributes" do
-      it "locates requested @task"
-      it "does not change @task's attributes"
-      it "re-renders :edit"
+
+      it "does not change @task's attributes" do
+        put :update, id: task.id, task: { title: " " }
+        task.reload
+        expect(task.title).to eq("Do the dishes")
+      end
+
+      it "re-renders :edit" do
+        put :update, id: task.id, task: { title: " " }
+        expect(response).to render_template(:edit)
+      end
     end
   end
 
   describe "GET index" do   
-    it "populates an array of tasks"
-    it "renders :index"
+    before { Task.destroy_all } 
+    let(:first_task) { Task.create(title: "Walk the dog")}
+    let(:second_task) { Task.create(title: "Buy groceries")}
+
+    it "renders :index" do
+      get :index
+      expect(response).to render_template(:index)
+    end
+
+    it "assigns all tasks to @tasks as an array" do
+      get :index
+      assigns(:tasks).should eq( [first_task, second_task] ) #may be reversed order
+    end
   end
 
   describe 'DELETE destroy' do
-    context "delete one task" do
-      it "deletes the task"
-      it "re-directs to :show"
+    let!(:task) { Task.create(title: "Walk the dog") }
+
+    it "deletes the requested task" do
+      expect {
+        delete :destroy, id: task.id
+      }.to change(Task, :count).by(-1)
     end
 
-    context "delete the entire task list" do
-      it "deletes the entire list of tasks"
-      it "re-directs to :show"
+    it "re-directs to :index" do
+      delete :destroy, id: task.id
+      expect(response).to redirect_to(tasks_path)
     end
   end
 end

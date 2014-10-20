@@ -1,10 +1,9 @@
-# 1. Create a GET tasks / show page when the user visits /tasks/:id (aka visits /tasks/3)
-
 require 'spec_helper'
 
 describe TasksController, type: :controller do 
   describe "GET show" do
-    let(:task) { Task.create(title: "Walk Milo", location: "Piedmont Park", due_at: "2014-10-10")}
+    let(:task) { FactoryGirl.create(:task)}
+
 
     it "renders :show" do
       get :show, id: task.id
@@ -61,7 +60,7 @@ describe "POST create" do
 end
 
   describe "GET edit" do
-    let(:task) { Task.create(title: "Walk the dog") }
+    let(:task) { FactoryGirl.create(:task) }
 
     it "renders :edit" do
     get :edit, id: task.id 
@@ -75,7 +74,7 @@ end
   end
 
   describe 'PUT update' do 
-    let(:task) { Task.create(title: "Do the dishes") }
+    let(:task) { FactoryGirl.create(:task, title: "Do the dishes") }
 
     context "valid attributes" do
 
@@ -109,8 +108,8 @@ end
 
   describe "GET index" do   
     before { Task.destroy_all } 
-    let(:first_task) { Task.create(title: "Walk the dog")}
-    let(:second_task) { Task.create(title: "Buy groceries")}
+    let(:first_task) { FactoryGirl.create(:task)}
+    let(:second_task) { FactoryGirl.create(:task)}
 
     it "renders :index" do
       get :index
@@ -124,7 +123,7 @@ end
   end
 
   describe 'DELETE destroy' do
-    let!(:task) { Task.create(title: "Walk the dog") }
+    let!(:task) { FactoryGirl.create(:task) }
 
     it "deletes the requested task" do
       expect {

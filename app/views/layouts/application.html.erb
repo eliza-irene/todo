@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Todo | <%=yield(:title)%></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--   <title>Todo</title> -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -8,11 +9,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <%= render 'layouts/navigation' %>
 
-<div class="container-fluid">
-  <%= flash[:notice] %>
+<div class="container">
   
+  <%= flash[:notice] %>
+    
 <%= yield %>
 </div>
 

@@ -4,10 +4,11 @@ describe "tasks_pages" do
   
   subject { page }
 
-  describe "show page GET /tasks/:id" do
-    let(:my_task) { Task.create(title: "Do the dishes")}
+  describe "show page GET /tasks/:id" do    
+    let(:my_task) { FactoryGirl.create(:task) }
+
     before { visit task_path(my_task.id) }
-    it { should have_title("Todo | Show Task") }
+    it { should have_title("Todo | @task.title") }
 
     it { should have_selector('h1', "I need to...") }
     it { should have_selector('p', text: my_task.title)}
@@ -52,7 +53,7 @@ describe "tasks_pages" do
           before { click_button submit}
 
           it {should have_title('Todo | New Task')}
-          # it {should have_content('error')}
+          it {should have_content('error')}
         end
       end
     end
@@ -60,7 +61,7 @@ describe "tasks_pages" do
 
   describe "index page GET /tasks" do
     before { visit tasks_path }
-    let(:task) { Task.create(title: "Walk the dog") }
+    let(:task) { FactoryGirl.create(:task) }
 
     it {should have_title( 'Todo | My Tasks')}
     it { should have_selector('h1', text: "All Tasks" )}
@@ -78,7 +79,7 @@ describe "tasks_pages" do
   end
 
   describe "edit page GET /tasks/:id/edit" do
-    let(:task) { Task.create(title: "Walk the dog") }
+    let(:task) { FactoryGirl.create(:task) }
 
     before { visit edit_task_path(task.id) }
 
@@ -90,13 +91,13 @@ describe "tasks_pages" do
 
       context "valid information" do
         before do
-          fill_in "Title", with: "Walk the dog"
+          fill_in "Title", with: "Do the dishes"
           click_button submit
         end
 
-        it { should have_title( 'Todo | Show Task')}
-        it { should have_selector('p'), text: "Walk the dog"}
-        specify { expect(task.reload.title).to eq("Walk the dog") }
+        it { should have_title( 'Todo | @task.title')}
+        it { should have_selector('p'), text: "Do the dishes"}
+        specify { expect(task.reload.title).to eq("Do the dishes") }
       end
 
       context "invalid information" do
@@ -106,7 +107,7 @@ describe "tasks_pages" do
         end
 
         it {should have_title('Todo | Edit Task') }
-        # it { should have_content('error') }
+        it { should have_content('error') }
       end
     end
   end

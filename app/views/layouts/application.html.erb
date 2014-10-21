@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+ 
+<title><%= content_for?(:title) ? yield(:title) : 'Todo | App' %></title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--   <title>Todo</title> -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -8,7 +12,14 @@
 </head>
 <body>
 
+<%= render 'layouts/navigation' %>
+
+<div class="container">
+  
+  <%= flash[:notice] %>
+    
 <%= yield %>
+</div>
 
 </body>
 </html>

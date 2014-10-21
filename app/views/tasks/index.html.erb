@@ -1,0 +1,36 @@
+<style>
+  .btn-info a {
+    color: #ffffff;
+  }
+
+  .btn.btn-info {
+    margin: 0 auto;
+    display: block;
+    width: 25%;
+  }
+
+</style>
+
+<% provide(:title, "My Tasks") %>
+
+<h1 class="text-center">All Tasks</h1>
+<div class="jumbotron">
+  <table class="table table-striped table-hover table-bordered">
+    <tr>
+      <th>Todo</th>
+      <th colspan="3"></th>
+    </tr>
+    <% @tasks.each do | task | %>
+      <tr>     
+        <td><%= task.title %></td>
+        <td><%= link_to 'Show', task_path(task), class:"btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_task_path(task), class:"btn btn-default" %></td>
+        <td><%= link_to 'Delete', task_path(task),  
+                      method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default" %></td 
+    </tr>
+  <% end %>
+  </table>
+
+  <div class="btn btn-lg btn-info" role="button"><%= link_to 'New Task', new_task_path %> </div>
+</div>
+

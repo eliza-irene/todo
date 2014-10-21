@@ -47,13 +47,18 @@ describe Task do
       end
     end
 
-    # Will fail until we cover hooks
-    # describe "due_at" do 
-    #   it "has default of date created" do
-    #     new_task = Task.create(title: "Walk the dog") 
-    #     expect(new_task.due_at).to eq(Date.today)
-    #   end
-    # end
+    describe "due_at" do 
+      it "has default of current day" do
+        new_task = Task.create(title: "Walk the dog") 
+        expect(new_task.due_at).to eq(Date.today)
+      end
+
+      it "uses selected date if selected" do
+        selected_date=2.weeks.from_now.to_date
+        new_task = Task.create(title: "Future task", due_at: selected_date)
+        expect(new_task.due_at).to eq(selected_date)
+      end
+    end
     
     # add location regex - users need to enter a full address if they want to be able to link to
     

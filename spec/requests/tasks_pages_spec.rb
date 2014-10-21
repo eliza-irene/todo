@@ -8,7 +8,7 @@ describe "tasks_pages" do
     let(:my_task) { FactoryGirl.create(:task) }
 
     before { visit task_path(my_task.id) }
-    it { should have_title("Todo | @task.title") }
+    it { should have_title("Todo | Walk the dog") }
 
     it { should have_selector('h1', "I need to...") }
     it { should have_selector('p', text: my_task.title)}
@@ -39,7 +39,7 @@ describe "tasks_pages" do
           before { click_button submit }
 
           #redirect to :show
-          it { should have_title("Todo | Show Task")}
+          it { should have_title("Todo | Walk the dog")}
           it { should have_selector('p', text: "Walk the dog")}
         end
       end
@@ -95,7 +95,7 @@ describe "tasks_pages" do
           click_button submit
         end
 
-        it { should have_title( 'Todo | @task.title')}
+        it { should have_title( 'Todo | Do the dishes')}
         it { should have_selector('p'), text: "Do the dishes"}
         specify { expect(task.reload.title).to eq("Do the dishes") }
       end

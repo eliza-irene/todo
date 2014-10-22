@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+  root 'static_pages#home'
+
 #use match for static pages (match automatically picks up the name of the route base ont he name)
   match '/home', to: 'static_pages#home', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/help', to: 'static_pages#help', via: 'get'
+  
   match '/signup', to: 'users#new', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
 
 #use get for dynamic pages (get doesn't pick up the name of the route, so you have to name it using as: :name)
   # get 'tasks/:id', to: 'tasks#show', as: :show_task
@@ -12,6 +16,7 @@ Rails.application.routes.draw do
  
   resources :tasks
   resources :users, only: [:create, :show]
+  resources :sessions, only: [:create, :destroy]
 
 
 

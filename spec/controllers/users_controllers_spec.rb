@@ -43,10 +43,7 @@ describe UsersController, type: :controller do
   end
 
   describe "GET show" do
-      User.destroy_all
-
       let(:user) { FactoryGirl.create(:user)}
-
 
       it "renders :show" do
         get :show, id: user.id

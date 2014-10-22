@@ -31,10 +31,11 @@ module SessionsHelper
   end
 
   def redirect_back_or(default)
-    #get from Gerry
+    redirect_to(session[:return_to] || default)
+    session.delete(:return_to)
   end
 
   def store_location
-    #get from Gerry
+    session[:return_to] = request.url if request.get?
   end
 end

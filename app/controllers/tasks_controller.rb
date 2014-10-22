@@ -43,7 +43,7 @@ end
 
   private
     def task_params
-      params.require(:task).permit(:title, :completed, :due_at)
+      params.require(:task).permit(:title, :location, :completed, :due_at)
     end
 
     def signed_in_user

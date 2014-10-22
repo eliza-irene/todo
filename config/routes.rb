@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
 
 #use get for dynamic pages (get doesn't pick up the name of the route, so you have to name it using as: :name)
   # get 'tasks/:id', to: 'tasks#show', as: :show_task

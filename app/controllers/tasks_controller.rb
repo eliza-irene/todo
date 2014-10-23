@@ -10,7 +10,7 @@ def new
 end
 
 def create
-  @task = Task.new(task_params)
+  @task = current_user.tasks.build(task_params)
   if @task.save
     redirect_to task_path(@task.id), notice: "You have created a new task!"
   else
@@ -19,7 +19,7 @@ def create
 end
 
 def index
-  @tasks = Task.all
+  @tasks = current_user.tasks
 end
 
 def edit

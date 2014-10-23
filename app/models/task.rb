@@ -1,8 +1,12 @@
 class Task < ActiveRecord::Base
+  belongs_to :user
+  
+  before_save:set_due_at
+
   validates :title, presence: true, length: { in: 3..254 }
   validates :location, length: { maximum: 254 }
-
-  before_save:set_due_at
+  validates :user_id, presence: true
+ 
 
   def set_due_at
     #uses provided due_at or defaults to today

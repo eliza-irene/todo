@@ -1,13 +1,16 @@
 require 'spec_helper'
 
 describe Task do 
-  before { @task = Task.new(title: "Walk the dog", completed: true, location: "the park") }
+  let(:user) { FactoryGirl.create(:user) }
+  before { @task = user.tasks.create(title: "Walk the dog", completed: true, location: "the park") }
     
   subject { @task }
 
   it { should respond_to(:location)}
   it { should respond_to(:completed) }
   it { should respond_to(:title) }
+  it { should respond_to(:user) }
+  it { should respond_to(:user_id) }
   it { should be_valid }
 
   describe "validations" do
@@ -30,7 +33,7 @@ describe Task do
 
     describe "completed" do
       it "false by default" do
-        new_task = Task.new(title: "Walk the dog")
+        new_task = user.tasks.new(title: "Any working title")
         expect(new_task.completed).to eq(false)
       end
     end
@@ -49,18 +52,24 @@ describe Task do
 
     describe "due_at" do 
       it "has default of current day" do
-        new_task = Task.create(title: "Walk the dog") 
+        new_task = user.tasks.create(title: "Anything goes here") 
         expect(new_task.due_at).to eq(Date.today)
       end
 
       it "uses selected date if selected" do
         selected_date=2.weeks.from_now.to_date
-        new_task = Task.create(title: "Future task", due_at: selected_date)
+        new_task = user.tasks.create(title: "Future task", due_at: selected_date)
         expect(new_task.due_at).to eq(selected_date)
       end
     end
     
-    # add location regex - users need to enter a full address if they want to be able to link to
+    describe "user_id" do
+      context "not present" do
+        before { @task.user_id = nil }
+        it { should_not be_valid }
+      end
+    end
+    
     
   end
 end

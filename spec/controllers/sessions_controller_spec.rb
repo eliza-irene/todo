@@ -40,7 +40,7 @@ describe SessionsController, type: :controller do
   end
 
   describe "DELETE destroy" do
-    it "signs the user out"
-    it "redirects back to root page"
+    # it "signs the user out"
+    # it "redirects back to root page"
   end
 end

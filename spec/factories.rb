@@ -3,6 +3,7 @@ FactoryGirl.define do
     title       "Walk the dog"
     completed   false
     location    "the park"
+    user 
   end
 
   sequence :name do |n|
